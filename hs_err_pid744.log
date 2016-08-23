@@ -1,0 +1,1112 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 209149952 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2827), pid=744, tid=139846996027136
+#
+# JRE version: OpenJDK Runtime Environment (7.0_111-b01) (build 1.7.0_111-b01)
+# Java VM: OpenJDK 64-Bit Server VM (24.111-b01 mixed mode linux-amd64 compressed oops)
+# Derivative: IcedTea 2.6.7
+# Distribution: Debian GNU/Linux 8.5 (jessie), package 7u111-2.6.7-1~deb8u1
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000003ef2800):  VMThread [stack: 0x00007f30aa756000,0x00007f30aa857000] [id=966]
+
+Stack: [0x00007f30aa756000,0x00007f30aa857000],  sp=0x00007f30aa855590,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x98e266]
+V  [libjvm.so+0x497f62]
+V  [libjvm.so+0x7ff27b]
+V  [libjvm.so+0x7f989e]
+V  [libjvm.so+0x98b0b4]
+V  [libjvm.so+0x57df2d]
+V  [libjvm.so+0x57e2be]
+V  [libjvm.so+0x56c4f4]
+V  [libjvm.so+0x42bdbc]
+V  [libjvm.so+0x98f650]
+V  [libjvm.so+0x993fc7]
+V  [libjvm.so+0x99273b]
+V  [libjvm.so+0x992de6]
+V  [libjvm.so+0x9932b1]
+V  [libjvm.so+0x7fc142]
+
+VM_Operation (0x00007ffce793afb0): GenCollectForAllocation, mode: safepoint, requested by thread 0x0000000003d11000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000003f4c800 JavaThread "Thread-0" [_thread_blocked, id=974, stack(0x00007f30a9f4e000,0x00007f30aa04f000)]
+  0x0000000003f26000 JavaThread "Service Thread" daemon [_thread_blocked, id=972, stack(0x00007f30aa150000,0x00007f30aa251000)]
+  0x0000000003f23800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=971, stack(0x00007f30aa251000,0x00007f30aa352000)]
+  0x0000000003f21800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=970, stack(0x00007f30aa352000,0x00007f30aa453000)]
+  0x0000000003f20000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=969, stack(0x00007f30aa453000,0x00007f30aa554000)]
+  0x0000000003ef7000 JavaThread "Finalizer" daemon [_thread_blocked, id=968, stack(0x00007f30aa554000,0x00007f30aa655000)]
+  0x0000000003ef6000 JavaThread "Reference Handler" daemon [_thread_blocked, id=967, stack(0x00007f30aa655000,0x00007f30aa756000)]
+  0x0000000003d11000 JavaThread "main" [_thread_blocked, id=744, stack(0x00007ffce7840000,0x00007ffce7940000)]
+
+Other Threads:
+=>0x0000000003ef2800 VMThread [stack: 0x00007f30aa756000,0x00007f30aa857000] [id=966]
+  0x0000000003f31000 WatcherThread [stack: 0x00007f30aa04f000,0x00007f30aa150000] [id=973]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000000002bc79a0] Threads_lock - owner thread: 0x0000000003ef2800
+[0x0000000002688890] Heap_lock - owner thread: 0x0000000003d11000
+
+Heap
+ def new generation   total 141376K, used 5444K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K,   4% used [0x00000000c5a00000, 0x00000000c5f51130, 0x00000000cd4c0000)
+  from space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+  to   space 15680K,   0% used [0x00000000ce410000, 0x00000000ce410000, 0x00000000cf360000)
+ tenured generation   total 320040K, used 320039K [0x00000000d5a00000, 0x00000000e928a000, 0x00000000f5a00000)
+   the space 320040K,  99% used [0x00000000d5a00000, 0x00000000e9289fa8, 0x00000000e928a000, 0x00000000e928a000)
+ compacting perm gen  total 21248K, used 4177K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  19% used [0x00000000f5a00000, 0x00000000f5e147d8, 0x00000000f5e14800, 0x00000000f6ec0000)
+No shared spaces configured.
+
+Card table byte_map: [0x00007f30aab0b000,0x00007f30aacdf000] byte_map_base: 0x00007f30aa4de000
+
+Polling page: 0x00007f30f04db000
+
+Code Cache  [0x00007f30a1000000, 0x00007f30a1270000, 0x00007f30a4000000)
+ total_blobs=560 nmethods=359 adapters=154 free_code_cache=47558Kb largest_free_block=48638464
+
+Compilation events (10 events):
+Event: 7.724 Thread 0x0000000003f23800 nmethod 512 0x00007f30a10f6ed0 code [0x00007f30a10f7000, 0x00007f30a10f7058]
+Event: 7.724 Thread 0x0000000003f23800  513             org.snu.ids.ha.ma.MCandidate::getDicLenWithCand (10 bytes)
+Event: 7.724 Thread 0x0000000003f23800 nmethod 513 0x00007f30a1106310 code [0x00007f30a1106440, 0x00007f30a1106498]
+Event: 7.729 Thread 0x0000000003f23800  514             java.lang.String::substring (56 bytes)
+Event: 7.731 Thread 0x0000000003f23800 nmethod 514 0x00007f30a10f7c90 code [0x00007f30a10f7e00, 0x00007f30a10f8158]
+Event: 7.731 Thread 0x0000000003f23800  515             java.util.ArrayList::access$100 (5 bytes)
+Event: 7.731 Thread 0x0000000003f23800 nmethod 515 0x00007f30a10c8810 code [0x00007f30a10c8940, 0x00007f30a10c8998]
+Event: 7.741 Thread 0x0000000003f21800 nmethod 511 0x00007f30a112ddd0 code [0x00007f30a112dfa0, 0x00007f30a112ed28]
+Event: 7.743 Thread 0x0000000003f23800  516             java.lang.Long::equals (30 bytes)
+Event: 7.743 Thread 0x0000000003f23800 nmethod 516 0x00007f30a10f7a10 code [0x00007f30a10f7b60, 0x00007f30a10f7bf8]
+
+GC Heap History (10 events):
+Event: 6.231 GC heap after
+Heap after GC invocations=50 (full 5):
+ def new generation   total 141376K, used 14146K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K,   0% used [0x00000000c5a00000, 0x00000000c5a00000, 0x00000000cd4c0000)
+  from space 15680K,  90% used [0x00000000ce410000, 0x00000000cf1e0ae0, 0x00000000cf360000)
+  to   space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+ tenured generation   total 314088K, used 250068K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  79% used [0x00000000d5a00000, 0x00000000e4e35080, 0x00000000e4e35200, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+}
+Event: 6.288 GC heap before
+{Heap before GC invocations=50 (full 5):
+ def new generation   total 141376K, used 139842K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K, 100% used [0x00000000c5a00000, 0x00000000cd4c0000, 0x00000000cd4c0000)
+  from space 15680K,  90% used [0x00000000ce410000, 0x00000000cf1e0ae0, 0x00000000cf360000)
+  to   space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+ tenured generation   total 314088K, used 250068K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  79% used [0x00000000d5a00000, 0x00000000e4e35080, 0x00000000e4e35200, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+Event: 6.341 GC heap after
+Heap after GC invocations=51 (full 5):
+ def new generation   total 141376K, used 14223K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K,   0% used [0x00000000c5a00000, 0x00000000c5a00000, 0x00000000cd4c0000)
+  from space 15680K,  90% used [0x00000000cd4c0000, 0x00000000ce2a3f00, 0x00000000ce410000)
+  to   space 15680K,   0% used [0x00000000ce410000, 0x00000000ce410000, 0x00000000cf360000)
+ tenured generation   total 314088K, used 264214K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  84% used [0x00000000d5a00000, 0x00000000e5c05a30, 0x00000000e5c05c00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+}
+Event: 6.389 GC heap before
+{Heap before GC invocations=51 (full 5):
+ def new generation   total 141376K, used 139919K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K, 100% used [0x00000000c5a00000, 0x00000000cd4c0000, 0x00000000cd4c0000)
+  from space 15680K,  90% used [0x00000000cd4c0000, 0x00000000ce2a3f00, 0x00000000ce410000)
+  to   space 15680K,   0% used [0x00000000ce410000, 0x00000000ce410000, 0x00000000cf360000)
+ tenured generation   total 314088K, used 264214K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  84% used [0x00000000d5a00000, 0x00000000e5c05a30, 0x00000000e5c05c00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+Event: 6.434 GC heap after
+Heap after GC invocations=52 (full 5):
+ def new generation   total 141376K, used 13824K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K,   0% used [0x00000000c5a00000, 0x00000000c5a00000, 0x00000000cd4c0000)
+  from space 15680K,  88% used [0x00000000ce410000, 0x00000000cf190090, 0x00000000cf360000)
+  to   space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+ tenured generation   total 314088K, used 278438K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  88% used [0x00000000d5a00000, 0x00000000e69e98f8, 0x00000000e69e9a00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+}
+Event: 6.483 GC heap before
+{Heap before GC invocations=52 (full 5):
+ def new generation   total 141376K, used 139520K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K, 100% used [0x00000000c5a00000, 0x00000000cd4c0000, 0x00000000cd4c0000)
+  from space 15680K,  88% used [0x00000000ce410000, 0x00000000cf190090, 0x00000000cf360000)
+  to   space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+ tenured generation   total 314088K, used 278438K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  88% used [0x00000000d5a00000, 0x00000000e69e98f8, 0x00000000e69e9a00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+Event: 6.531 GC heap after
+Heap after GC invocations=53 (full 5):
+ def new generation   total 141376K, used 13960K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K,   0% used [0x00000000c5a00000, 0x00000000c5a00000, 0x00000000cd4c0000)
+  from space 15680K,  89% used [0x00000000cd4c0000, 0x00000000ce262360, 0x00000000ce410000)
+  to   space 15680K,   0% used [0x00000000ce410000, 0x00000000ce410000, 0x00000000cf360000)
+ tenured generation   total 314088K, used 292262K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  93% used [0x00000000d5a00000, 0x00000000e7769810, 0x00000000e7769a00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacc00, 0x00000000f5dacc00, 0x00000000f6ec0000)
+No shared spaces configured.
+}
+Event: 6.712 GC heap before
+{Heap before GC invocations=53 (full 5):
+ def new generation   total 141376K, used 139656K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K, 100% used [0x00000000c5a00000, 0x00000000cd4c0000, 0x00000000cd4c0000)
+  from space 15680K,  89% used [0x00000000cd4c0000, 0x00000000ce262360, 0x00000000ce410000)
+  to   space 15680K,   0% used [0x00000000ce410000, 0x00000000ce410000, 0x00000000cf360000)
+ tenured generation   total 314088K, used 292262K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  93% used [0x00000000d5a00000, 0x00000000e7769810, 0x00000000e7769a00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacf60, 0x00000000f5dad000, 0x00000000f6ec0000)
+No shared spaces configured.
+Event: 6.773 GC heap after
+Heap after GC invocations=54 (full 5):
+ def new generation   total 141376K, used 13672K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K,   0% used [0x00000000c5a00000, 0x00000000c5a00000, 0x00000000cd4c0000)
+  from space 15680K,  87% used [0x00000000ce410000, 0x00000000cf16a3d8, 0x00000000cf360000)
+  to   space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+ tenured generation   total 314088K, used 306222K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  97% used [0x00000000d5a00000, 0x00000000e850ba70, 0x00000000e850bc00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 3763K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  17% used [0x00000000f5a00000, 0x00000000f5dacf60, 0x00000000f5dad000, 0x00000000f6ec0000)
+No shared spaces configured.
+}
+Event: 7.749 GC heap before
+{Heap before GC invocations=54 (full 5):
+ def new generation   total 141376K, used 139368K [0x00000000c5a00000, 0x00000000cf360000, 0x00000000d5a00000)
+  eden space 125696K, 100% used [0x00000000c5a00000, 0x00000000cd4c0000, 0x00000000cd4c0000)
+  from space 15680K,  87% used [0x00000000ce410000, 0x00000000cf16a3d8, 0x00000000cf360000)
+  to   space 15680K,   0% used [0x00000000cd4c0000, 0x00000000cd4c0000, 0x00000000ce410000)
+ tenured generation   total 314088K, used 306222K [0x00000000d5a00000, 0x00000000e8cba000, 0x00000000f5a00000)
+   the space 314088K,  97% used [0x00000000d5a00000, 0x00000000e850ba70, 0x00000000e850bc00, 0x00000000e8cba000)
+ compacting perm gen  total 21248K, used 4177K [0x00000000f5a00000, 0x00000000f6ec0000, 0x0000000100000000)
+   the space 21248K,  19% used [0x00000000f5a00000, 0x00000000f5e147d8, 0x00000000f5e14800, 0x00000000f6ec0000)
+No shared spaces configured.
+
+Deoptimization events (10 events):
+Event: 7.195 Thread 0x0000000003d11000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30a1108800 method=java.lang.CharacterData.of(I)Ljava/lang/CharacterData; @ 4
+Event: 7.212 Thread 0x0000000003d11000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f30a10f3d78 method=java.util.regex.Pattern$Branch.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 50
+Event: 7.212 Thread 0x0000000003d11000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f30a10f3d78 method=java.util.regex.Pattern$Branch.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 50
+Event: 7.212 Thread 0x0000000003d11000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f30a10f3d78 method=java.util.regex.Pattern$Branch.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 50
+Event: 7.212 Thread 0x0000000003d11000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f30a10f3d78 method=java.util.regex.Pattern$Branch.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 50
+Event: 7.245 Thread 0x0000000003d11000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30a1113e6c method=org.snu.ids.ha.ma.MCandidate.calcDicLen()V @ 220
+Event: 7.371 Thread 0x0000000003d11000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30a111f21c method=java.util.regex.Pattern$Branch.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 35
+Event: 7.599 Thread 0x0000000003d11000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30a1068450 method=java.util.HashMap.getEntry(Ljava/lang/Object;)Ljava/util/HashMap$Entry; @ 71
+Event: 7.693 Thread 0x0000000003d11000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30a116765c method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 5
+Event: 7.693 Thread 0x0000000003d11000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30a111a7bc method=java.lang.String.trim()Ljava/lang/String; @ 23
+
+Internal exceptions (10 events):
+Event: 6.989 Thread 0x0000000003d11000 Threw 0x00000000ca5ca150 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 6.990 Thread 0x0000000003d11000 Threw 0x00000000ca5ce640 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 6.991 Thread 0x0000000003d11000 Threw 0x00000000ca5d9830 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 6.993 Thread 0x0000000003d11000 Threw 0x00000000ca5e1b98 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 6.993 Thread 0x0000000003d11000 Threw 0x00000000ca5e9e70 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 7.012 Thread 0x0000000003d11000 Threw 0x00000000ca614c78 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 7.142 Thread 0x0000000003d11000 Threw 0x00000000ca9c5830 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 7.187 Thread 0x0000000003d11000 Threw 0x00000000cab8c678 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+Event: 7.188 Thread 0x0000000003d11000 Implicit null exception at 0x00007f30a108fa7b to 0x00007f30a108fbf5
+Event: 7.205 Thread 0x0000000003d11000 Threw 0x00000000cabb5d58 at /home/jmm/jdk/openjdk-7-7u111-2.6.7/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1322
+
+Events (10 events):
+Event: 7.599 Thread 0x0000000003d11000 Uncommon trap: trap_request=0xffffff75 fr.pc=0x00007f30a1068450
+Event: 7.599 Thread 0x0000000003d11000 DEOPT PACKING pc=0x00007f30a1068450 sp=0x00007ffce793b7d0
+Event: 7.599 Thread 0x0000000003d11000 DEOPT UNPACKING pc=0x00007f30a1039445 sp=0x00007ffce793b6d0 mode 2
+Event: 7.693 Thread 0x0000000003d11000 Uncommon trap: trap_request=0xffffff75 fr.pc=0x00007f30a116765c
+Event: 7.693 Thread 0x0000000003d11000 DEOPT PACKING pc=0x00007f30a116765c sp=0x00007ffce793b410
+Event: 7.693 Thread 0x0000000003d11000 DEOPT UNPACKING pc=0x00007f30a1039445 sp=0x00007ffce793b3e8 mode 2
+Event: 7.693 Thread 0x0000000003d11000 Uncommon trap: trap_request=0xffffff75 fr.pc=0x00007f30a111a7bc
+Event: 7.693 Thread 0x0000000003d11000 DEOPT PACKING pc=0x00007f30a111a7bc sp=0x00007ffce793b660
+Event: 7.693 Thread 0x0000000003d11000 DEOPT UNPACKING pc=0x00007f30a1039445 sp=0x00007ffce793b5c0 mode 2
+Event: 7.749 Executing VM operation: GenCollectForAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 00:21 2703                               /opt/conda/envs/python2/bin/python2.7
+00600000-00601000 rw-p 00000000 00:21 2703                               /opt/conda/envs/python2/bin/python2.7
+0205f000-0858a000 rw-p 00000000 00:00 0                                  [heap]
+c5a00000-cf360000 rw-p 00000000 00:00 0 
+cf360000-d5a00000 rw-p 00000000 00:00 0 
+d5a00000-e928a000 rw-p 00000000 00:00 0 
+f5a00000-f6ec0000 rw-p 00000000 00:00 0 
+f6ec0000-100000000 rw-p 00000000 00:00 0 
+7f30a1000000-7f30a1270000 rwxp 00000000 00:00 0 
+7f30a1270000-7f30a43e8000 rw-p 00000000 00:00 0 
+7f30a43e8000-7f30a8000000 ---p 00000000 00:00 0 
+7f30a9f4e000-7f30a9f51000 ---p 00000000 00:00 0 
+7f30a9f51000-7f30aa04f000 rw-p 00000000 00:00 0                          [stack:974]
+7f30aa04f000-7f30aa050000 ---p 00000000 00:00 0 
+7f30aa050000-7f30aa150000 rw-p 00000000 00:00 0                          [stack:973]
+7f30aa150000-7f30aa153000 ---p 00000000 00:00 0 
+7f30aa153000-7f30aa251000 rw-p 00000000 00:00 0                          [stack:972]
+7f30aa251000-7f30aa254000 ---p 00000000 00:00 0 
+7f30aa254000-7f30aa352000 rw-p 00000000 00:00 0                          [stack:971]
+7f30aa352000-7f30aa355000 ---p 00000000 00:00 0 
+7f30aa355000-7f30aa453000 rw-p 00000000 00:00 0                          [stack:970]
+7f30aa453000-7f30aa456000 ---p 00000000 00:00 0 
+7f30aa456000-7f30aa554000 rw-p 00000000 00:00 0                          [stack:969]
+7f30aa554000-7f30aa557000 ---p 00000000 00:00 0 
+7f30aa557000-7f30aa655000 rw-p 00000000 00:00 0                          [stack:968]
+7f30aa655000-7f30aa658000 ---p 00000000 00:00 0 
+7f30aa658000-7f30aa756000 rw-p 00000000 00:00 0                          [stack:967]
+7f30aa756000-7f30aa757000 ---p 00000000 00:00 0 
+7f30aa757000-7f30aa857000 rw-p 00000000 00:00 0                          [stack:966]
+7f30aa857000-7f30aaa0a000 r--s 01d3d000 00:21 5588                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar
+7f30aaa0a000-7f30aaaa7000 rw-p 00000000 00:00 0 
+7f30aaaa7000-7f30aab0b000 rw-p 00000000 00:00 0 
+7f30aab0b000-7f30aab58000 rw-p 00000000 00:00 0 
+7f30aab58000-7f30aab8b000 rw-p 00000000 00:00 0 
+7f30aab8b000-7f30aac28000 rw-p 00000000 00:00 0 
+7f30aac28000-7f30aac8b000 rw-p 00000000 00:00 0 
+7f30aac8b000-7f30aac96000 rw-p 00000000 00:00 0 
+7f30aac96000-7f30aacde000 rw-p 00000000 00:00 0 
+7f30aacde000-7f30aace9000 rw-p 00000000 00:00 0 
+7f30aace9000-7f30aad9f000 rw-p 00000000 00:00 0 
+7f30aad9f000-7f30aada7000 r-xp 00000000 00:21 5674                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f30aada7000-7f30aafa6000 ---p 00008000 00:21 5674                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f30aafa6000-7f30aafa7000 r--p 00007000 00:21 5674                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f30aafa7000-7f30aafa8000 rw-p 00008000 00:21 5674                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f30aafa8000-7f30aafb2000 r-xp 00000000 00:21 71                         /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f30aafb2000-7f30ab1b1000 ---p 0000a000 00:21 71                         /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f30ab1b1000-7f30ab1b2000 r--p 00009000 00:21 71                         /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f30ab1b2000-7f30ab1b3000 rw-p 0000a000 00:21 71                         /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f30ab1b3000-7f30abd10000 r-xp 00000000 00:21 5681                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f30abd10000-7f30abf10000 ---p 00b5d000 00:21 5681                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f30abf10000-7f30abfaf000 r--p 00b5d000 00:21 5681                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f30abfaf000-7f30abfd2000 rw-p 00bfc000 00:21 5681                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f30abfd2000-7f30ac000000 rw-p 00000000 00:00 0 
+7f30ac000000-7f30ad0f5000 rw-p 00000000 00:00 0 
+7f30ad0f5000-7f30b0000000 ---p 00000000 00:00 0 
+7f30b000a000-7f30b0015000 rw-p 00000000 00:00 0 
+7f30b0015000-7f30b005e000 rw-p 00000000 00:00 0 
+7f30b005e000-7f30b0073000 r-xp 00000000 00:21 69                         /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f30b0073000-7f30b0272000 ---p 00015000 00:21 69                         /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f30b0272000-7f30b0273000 r--p 00014000 00:21 69                         /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f30b0273000-7f30b0274000 rw-p 00015000 00:21 69                         /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f30b0274000-7f30b17b2000 rw-p 00000000 00:00 0 
+7f30b17cf000-7f30b17d6000 r-xp 00000000 00:21 67                         /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f30b17d6000-7f30b19d5000 ---p 00007000 00:21 67                         /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f30b19d5000-7f30b19d6000 r--p 00006000 00:21 67                         /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f30b19d6000-7f30b19d7000 rw-p 00007000 00:21 67                         /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f30b19d7000-7f30b1a04000 r-xp 00000000 00:21 5663                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f30b1a04000-7f30b1c03000 ---p 0002d000 00:21 5663                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f30b1c03000-7f30b1c04000 r--p 0002c000 00:21 5663                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f30b1c04000-7f30b1c06000 rw-p 0002d000 00:21 5663                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f30b1c06000-7f30b1c15000 r-xp 00000000 00:21 5660                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f30b1c15000-7f30b1e14000 ---p 0000f000 00:21 5660                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f30b1e14000-7f30b1e17000 r--p 0000e000 00:21 5660                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f30b1e17000-7f30b1e18000 rw-p 00011000 00:21 5660                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f30b1e18000-7f30b1e9d000 r-xp 00000000 00:21 2757                       /opt/conda/envs/python2/lib/python2.7/site-packages/_jpype.so
+7f30b1e9d000-7f30b209c000 ---p 00085000 00:21 2757                       /opt/conda/envs/python2/lib/python2.7/site-packages/_jpype.so
+7f30b209c000-7f30b20a2000 rw-p 00084000 00:21 2757                       /opt/conda/envs/python2/lib/python2.7/site-packages/_jpype.so
+7f30b20a2000-7f30b20ad000 r-xp 00000000 00:21 73                         /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f30b20ad000-7f30b22ac000 ---p 0000b000 00:21 73                         /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f30b22ac000-7f30b22ad000 r--p 0000a000 00:21 73                         /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f30b22ad000-7f30b22ae000 rw-p 0000b000 00:21 73                         /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f30b22ae000-7f30b2cee000 rw-p 00000000 00:00 0 
+7f30b2cee000-7f30b2cef000 ---p 00000000 00:00 0 
+7f30b2cef000-7f30b34ef000 rw-p 00000000 00:00 0 
+7f30b34ef000-7f30b34f0000 ---p 00000000 00:00 0 
+7f30b34f0000-7f30b3cf0000 rw-p 00000000 00:00 0 
+7f30b3cf0000-7f30b3cf1000 ---p 00000000 00:00 0 
+7f30b3cf1000-7f30b4531000 rw-p 00000000 00:00 0 
+7f30b4531000-7f30b4543000 r-xp 00000000 00:21 4457                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/_random.so
+7f30b4543000-7f30b4742000 ---p 00012000 00:21 4457                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/_random.so
+7f30b4742000-7f30b4745000 rw-p 00011000 00:21 4457                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/_random.so
+7f30b4745000-7f30b4757000 r-xp 00000000 00:21 4452                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/sag_fast.so
+7f30b4757000-7f30b4957000 ---p 00012000 00:21 4452                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/sag_fast.so
+7f30b4957000-7f30b495a000 rw-p 00012000 00:21 4452                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/sag_fast.so
+7f30b495a000-7f30b4965000 r-xp 00000000 00:21 4430                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/weight_vector.so
+7f30b4965000-7f30b4b64000 ---p 0000b000 00:21 4430                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/weight_vector.so
+7f30b4b64000-7f30b4b66000 rw-p 0000a000 00:21 4430                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/weight_vector.so
+7f30b4b66000-7f30b4b84000 r-xp 00000000 00:21 4429                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/sgd_fast.so
+7f30b4b84000-7f30b4d83000 ---p 0001e000 00:21 4429                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/sgd_fast.so
+7f30b4d83000-7f30b4d88000 rw-p 0001d000 00:21 4429                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/sgd_fast.so
+7f30b4d88000-7f30b4d89000 rw-p 00000000 00:00 0 
+7f30b4d89000-7f30b4dbb000 r-xp 00000000 00:21 4428                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/cd_fast.so
+7f30b4dbb000-7f30b4fba000 ---p 00032000 00:21 4428                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/cd_fast.so
+7f30b4fba000-7f30b4fbf000 rw-p 00031000 00:21 4428                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/linear_model/cd_fast.so
+7f30b4fbf000-7f30b4fc0000 rw-p 00000000 00:00 0 
+7f30b4fc0000-7f30b4fc7000 r-xp 00000000 00:21 4423                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/arrayfuncs.so
+7f30b4fc7000-7f30b51c6000 ---p 00007000 00:21 4423                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/arrayfuncs.so
+7f30b51c6000-7f30b51c8000 rw-p 00006000 00:21 4423                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/arrayfuncs.so
+7f30b51c8000-7f30b520e000 r-xp 00000000 00:21 4416                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/interpnd.so
+7f30b520e000-7f30b540d000 ---p 00046000 00:21 4416                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/interpnd.so
+7f30b540d000-7f30b5414000 rw-p 00045000 00:21 4416                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/interpnd.so
+7f30b5414000-7f30b5415000 rw-p 00000000 00:00 0 
+7f30b5415000-7f30b5454000 r-xp 00000000 00:21 4413                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/_ppoly.so
+7f30b5454000-7f30b5653000 ---p 0003f000 00:21 4413                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/_ppoly.so
+7f30b5653000-7f30b5659000 rw-p 0003e000 00:21 4413                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/_ppoly.so
+7f30b5659000-7f30b565a000 rw-p 00000000 00:00 0 
+7f30b565a000-7f30b56bb000 r-xp 00000000 00:21 4410                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/dfitpack.so
+7f30b56bb000-7f30b58bb000 ---p 00061000 00:21 4410                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/dfitpack.so
+7f30b58bb000-7f30b58c2000 rw-p 00061000 00:21 4410                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/dfitpack.so
+7f30b58c2000-7f30b58f7000 r-xp 00000000 00:21 4409                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/_fitpack.so
+7f30b58f7000-7f30b5af7000 ---p 00035000 00:21 4409                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/_fitpack.so
+7f30b5af7000-7f30b5af8000 rw-p 00035000 00:21 4409                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/interpolate/_fitpack.so
+7f30b5af8000-7f30b5b0a000 r-xp 00000000 00:21 4397                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/seq_dataset.so
+7f30b5b0a000-7f30b5d0a000 ---p 00012000 00:21 4397                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/seq_dataset.so
+7f30b5d0a000-7f30b5d0c000 rw-p 00012000 00:21 4397                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/seq_dataset.so
+7f30b5d0c000-7f30b5d3b000 r-xp 00000000 00:21 4383                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/metrics/pairwise_fast.so
+7f30b5d3b000-7f30b5f3b000 ---p 0002f000 00:21 4383                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/metrics/pairwise_fast.so
+7f30b5f3b000-7f30b5f3f000 rw-p 0002f000 00:21 4383                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/metrics/pairwise_fast.so
+7f30b5f3f000-7f30b5f40000 rw-p 00000000 00:00 0 
+7f30b5f40000-7f30b5f43000 r-xp 00000000 00:21 4378                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/lgamma.so
+7f30b5f43000-7f30b6143000 ---p 00003000 00:21 4378                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/lgamma.so
+7f30b6143000-7f30b6144000 rw-p 00003000 00:21 4378                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/lgamma.so
+7f30b6144000-7f30b6158000 r-xp 00000000 00:21 4377                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/metrics/cluster/expected_mutual_info_fast.so
+7f30b6158000-7f30b6357000 ---p 00014000 00:21 4377                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/metrics/cluster/expected_mutual_info_fast.so
+7f30b6357000-7f30b6359000 rw-p 00013000 00:21 4377                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/metrics/cluster/expected_mutual_info_fast.so
+7f30b6359000-7f30b6371000 r-xp 00000000 00:21 4371                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/_distance_wrap.so
+7f30b6371000-7f30b6571000 ---p 00018000 00:21 4371                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/_distance_wrap.so
+7f30b6571000-7f30b6572000 rw-p 00018000 00:21 4371                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/_distance_wrap.so
+7f30b6572000-7f30b6633000 r-xp 00000000 00:21 4364                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/qhull.so
+7f30b6633000-7f30b6832000 ---p 000c1000 00:21 4364                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/qhull.so
+7f30b6832000-7f30b683e000 rw-p 000c0000 00:21 4364                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/qhull.so
+7f30b683e000-7f30b6840000 rw-p 00000000 00:00 0 
+7f30b6840000-7f30b68c3000 r-xp 00000000 00:21 4363                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/ckdtree.so
+7f30b68c3000-7f30b6ac3000 ---p 00083000 00:21 4363                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/ckdtree.so
+7f30b6ac3000-7f30b6aca000 rw-p 00083000 00:21 4363                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/spatial/ckdtree.so
+7f30b6aca000-7f30b6b07000 r-xp 00000000 00:21 4210                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/libsvm_sparse.so
+7f30b6b07000-7f30b6d07000 ---p 0003d000 00:21 4210                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/libsvm_sparse.so
+7f30b6d07000-7f30b6d0a000 rw-p 0003d000 00:21 4210                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/libsvm_sparse.so
+7f30b6d0a000-7f30b6d0b000 rw-p 00000000 00:00 0 
+7f30b6d0b000-7f30b6d25000 r-xp 00000000 00:21 4209                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/liblinear.so
+7f30b6d25000-7f30b6f25000 ---p 0001a000 00:21 4209                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/liblinear.so
+7f30b6f25000-7f30b6f27000 rw-p 0001a000 00:21 4209                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/liblinear.so
+7f30b6f27000-7f30b6f68000 r-xp 00000000 00:21 4208                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/libsvm.so
+7f30b6f68000-7f30b7168000 ---p 00041000 00:21 4208                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/libsvm.so
+7f30b7168000-7f30b716c000 rw-p 00041000 00:21 4208                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/svm/libsvm.so
+7f30b716c000-7f30b772d000 rw-p 00000000 00:00 0 
+7f30b772d000-7f30b773f000 r-xp 00000000 00:21 4338                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/mvn.so
+7f30b773f000-7f30b793e000 ---p 00012000 00:21 4338                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/mvn.so
+7f30b793e000-7f30b7940000 rw-p 00011000 00:21 4338                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/mvn.so
+7f30b7940000-7f30b7a37000 rw-p 00000000 00:00 0 
+7f30b7a37000-7f30b7a42000 r-xp 00000000 00:21 4331                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/statlib.so
+7f30b7a42000-7f30b7c41000 ---p 0000b000 00:21 4331                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/statlib.so
+7f30b7c41000-7f30b7c43000 rw-p 0000a000 00:21 4331                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/statlib.so
+7f30b7c43000-7f30b7c83000 rw-p 00000000 00:00 0 
+7f30b7c83000-7f30b7c90000 r-xp 00000000 00:21 4328                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/_rank.so
+7f30b7c90000-7f30b7e90000 ---p 0000d000 00:21 4328                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/_rank.so
+7f30b7e90000-7f30b7e92000 rw-p 0000d000 00:21 4328                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/_rank.so
+7f30b7e92000-7f30b7f92000 rw-p 00000000 00:00 0 
+7f30b7f92000-7f30b7fa4000 r-xp 00000000 00:21 4319                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/vonmises_cython.so
+7f30b7fa4000-7f30b81a3000 ---p 00012000 00:21 4319                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/vonmises_cython.so
+7f30b81a3000-7f30b81a5000 rw-p 00011000 00:21 4319                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/stats/vonmises_cython.so
+7f30b81a5000-7f30b8225000 rw-p 00000000 00:00 0 
+7f30b8225000-7f30b822f000 r-xp 00000000 00:21 4304                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_nnls.so
+7f30b822f000-7f30b842f000 ---p 0000a000 00:21 4304                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_nnls.so
+7f30b842f000-7f30b8430000 rw-p 0000a000 00:21 4304                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_nnls.so
+7f30b8430000-7f30b8433000 r-xp 00000000 00:21 4301                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_zeros.so
+7f30b8433000-7f30b8632000 ---p 00003000 00:21 4301                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_zeros.so
+7f30b8632000-7f30b8633000 rw-p 00002000 00:21 4301                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_zeros.so
+7f30b8633000-7f30b8673000 rw-p 00000000 00:00 0 
+7f30b8673000-7f30b8693000 r-xp 00000000 00:21 4292                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_lsq/givens_elimination.so
+7f30b8693000-7f30b8892000 ---p 00020000 00:21 4292                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_lsq/givens_elimination.so
+7f30b8892000-7f30b8895000 rw-p 0001f000 00:21 4292                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_lsq/givens_elimination.so
+7f30b8895000-7f30b8896000 rw-p 00000000 00:00 0 
+7f30b8896000-7f30b88be000 r-xp 00000000 00:21 4281                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_group_columns.so
+7f30b88be000-7f30b8abe000 ---p 00028000 00:21 4281                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_group_columns.so
+7f30b8abe000-7f30b8ac1000 rw-p 00028000 00:21 4281                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_group_columns.so
+7f30b8ac1000-7f30b8ac2000 rw-p 00000000 00:00 0 
+7f30b8ac2000-7f30b8ae2000 r-xp 00000000 00:21 4273                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_minpack.so
+7f30b8ae2000-7f30b8ce1000 ---p 00020000 00:21 4273                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_minpack.so
+7f30b8ce1000-7f30b8ce2000 rw-p 0001f000 00:21 4273                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_minpack.so
+7f30b8ce2000-7f30b8cf9000 r-xp 00000000 00:21 4268                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_slsqp.so
+7f30b8cf9000-7f30b8ef9000 ---p 00017000 00:21 4268                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_slsqp.so
+7f30b8ef9000-7f30b8efa000 rw-p 00017000 00:21 4268                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_slsqp.so
+7f30b8efa000-7f30b8f18000 r-xp 00000000 00:21 4265                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_cobyla.so
+7f30b8f18000-7f30b9118000 ---p 0001e000 00:21 4265                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_cobyla.so
+7f30b9118000-7f30b9119000 rw-p 0001e000 00:21 4265                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_cobyla.so
+7f30b9119000-7f30b9125000 r-xp 00000000 00:21 4262                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/moduleTNC.so
+7f30b9125000-7f30b9325000 ---p 0000c000 00:21 4262                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/moduleTNC.so
+7f30b9325000-7f30b9326000 rw-p 0000c000 00:21 4262                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/moduleTNC.so
+7f30b9326000-7f30b9345000 r-xp 00000000 00:21 4259                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_lbfgsb.so
+7f30b9345000-7f30b9544000 ---p 0001f000 00:21 4259                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_lbfgsb.so
+7f30b9544000-7f30b9545000 rw-p 0001e000 00:21 4259                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/_lbfgsb.so
+7f30b9545000-7f30b9585000 rw-p 00000000 00:00 0 
+7f30b9585000-7f30b958f000 r-xp 00000000 00:21 4248                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/minpack2.so
+7f30b958f000-7f30b978f000 ---p 0000a000 00:21 4248                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/minpack2.so
+7f30b978f000-7f30b9790000 rw-p 0000a000 00:21 4248                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/optimize/minpack2.so
+7f30b9790000-7f30b97d0000 rw-p 00000000 00:00 0 
+7f30b97d0000-7f30b97e9000 r-xp 00000000 00:21 4221                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/sparsefuncs_fast.so
+7f30b97e9000-7f30b99e9000 ---p 00019000 00:21 4221                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/sparsefuncs_fast.so
+7f30b99e9000-7f30b99ec000 rw-p 00019000 00:21 4221                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/sparsefuncs_fast.so
+7f30b99ec000-7f30b99f6000 r-xp 00000000 00:21 4220                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/_logistic_sigmoid.so
+7f30b99f6000-7f30b9bf5000 ---p 0000a000 00:21 4220                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/_logistic_sigmoid.so
+7f30b9bf5000-7f30b9bf6000 rw-p 00009000 00:21 4220                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/_logistic_sigmoid.so
+7f30b9bf6000-7f30b9c37000 rw-p 00000000 00:00 0 
+7f30b9c37000-7f30b9c40000 r-xp 00000000 00:21 4483                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/feature_extraction/_hashing.so
+7f30b9c40000-7f30b9e3f000 ---p 00009000 00:21 4483                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/feature_extraction/_hashing.so
+7f30b9e3f000-7f30b9e41000 rw-p 00008000 00:21 4483                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/feature_extraction/_hashing.so
+7f30b9e41000-7f30b9e46000 r-xp 00000000 00:21 4196                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/mmap.so
+7f30b9e46000-7f30ba046000 ---p 00005000 00:21 4196                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/mmap.so
+7f30ba046000-7f30ba047000 rw-p 00005000 00:21 4196                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/mmap.so
+7f30ba047000-7f30ba0c7000 rw-p 00000000 00:00 0 
+7f30ba0c7000-7f30ba0e8000 r-xp 00000000 00:21 4143                       /opt/conda/envs/python2/lib/liblzma.so.5.0.5
+7f30ba0e8000-7f30ba2e8000 ---p 00021000 00:21 4143                       /opt/conda/envs/python2/lib/liblzma.so.5.0.5
+7f30ba2e8000-7f30ba2e9000 rw-p 00021000 00:21 4143                       /opt/conda/envs/python2/lib/liblzma.so.5.0.5
+7f30ba2e9000-7f30ba359000 r-xp 00000000 00:21 4141                       /opt/conda/envs/python2/lib/libtiff.so.5.2.4
+7f30ba359000-7f30ba558000 ---p 00070000 00:21 4141                       /opt/conda/envs/python2/lib/libtiff.so.5.2.4
+7f30ba558000-7f30ba55c000 rw-p 0006f000 00:21 4141                       /opt/conda/envs/python2/lib/libtiff.so.5.2.4
+7f30ba55c000-7f30ba597000 r-xp 00000000 00:21 4139                       /opt/conda/envs/python2/lib/libjpeg.so.9.2.0
+7f30ba597000-7f30ba797000 ---p 0003b000 00:21 4139                       /opt/conda/envs/python2/lib/libjpeg.so.9.2.0
+7f30ba797000-7f30ba798000 rw-p 0003b000 00:21 4139                       /opt/conda/envs/python2/lib/libjpeg.so.9.2.0
+7f30ba798000-7f30ba7f9000 r-xp 00000000 00:21 4137                       /opt/conda/envs/python2/lib/python2.7/site-packages/PIL/_imaging.so
+7f30ba7f9000-7f30ba9f9000 ---p 00061000 00:21 4137                       /opt/conda/envs/python2/lib/python2.7/site-packages/PIL/_imaging.so
+7f30ba9f9000-7f30ba9ff000 rw-p 00061000 00:21 4137                       /opt/conda/envs/python2/lib/python2.7/site-packages/PIL/_imaging.so
+7f30ba9ff000-7f30baa3f000 rw-p 00000000 00:00 0 
+7f30baa3f000-7f30baadc000 r-xp 00000000 00:21 4114                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.so
+7f30baadc000-7f30bacdc000 ---p 0009d000 00:21 4114                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.so
+7f30bacdc000-7f30bace8000 rw-p 0009d000 00:21 4114                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.so
+7f30bace8000-7f30bace9000 rw-p 00000000 00:00 0 
+7f30bace9000-7f30bacea000 rw-p 00196000 00:21 4114                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.so
+7f30bacea000-7f30bad42000 r-xp 00000000 00:21 4103                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/dsolve/_superlu.so
+7f30bad42000-7f30baf42000 ---p 00058000 00:21 4103                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/dsolve/_superlu.so
+7f30baf42000-7f30baf44000 rw-p 00058000 00:21 4103                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/dsolve/_superlu.so
+7f30baf44000-7f30baf85000 rw-p 00000000 00:00 0 
+7f30baf85000-7f30bafbe000 r-xp 00000000 00:21 4083                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/isolve/_iterative.so
+7f30bafbe000-7f30bb1bd000 ---p 00039000 00:21 4083                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/isolve/_iterative.so
+7f30bb1bd000-7f30bb1c5000 rw-p 00038000 00:21 4083                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/linalg/isolve/_iterative.so
+7f30bb1c5000-7f30bb1c7000 rw-p 00000000 00:00 0 
+7f30bb1c7000-7f30bb1f3000 r-xp 00000000 00:21 4072                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/lsoda.so
+7f30bb1f3000-7f30bb3f3000 ---p 0002c000 00:21 4072                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/lsoda.so
+7f30bb3f3000-7f30bb3f5000 rw-p 0002c000 00:21 4072                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/lsoda.so
+7f30bb3f5000-7f30bb411000 r-xp 00000000 00:21 4071                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_dop.so
+7f30bb411000-7f30bb610000 ---p 0001c000 00:21 4071                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_dop.so
+7f30bb610000-7f30bb612000 rw-p 0001b000 00:21 4071                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_dop.so
+7f30bb612000-7f30bb645000 r-xp 00000000 00:21 4070                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/vode.so
+7f30bb645000-7f30bb844000 ---p 00033000 00:21 4070                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/vode.so
+7f30bb844000-7f30bb846000 rw-p 00032000 00:21 4070                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/vode.so
+7f30bb846000-7f30bb847000 rw-p 00000000 00:00 0 
+7f30bb847000-7f30bb863000 r-xp 00000000 00:21 4067                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_quadpack.so
+7f30bb863000-7f30bba63000 ---p 0001c000 00:21 4067                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_quadpack.so
+7f30bba63000-7f30bba64000 rw-p 0001c000 00:21 4067                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_quadpack.so
+7f30bba64000-7f30bba8d000 r-xp 00000000 00:21 4064                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_odepack.so
+7f30bba8d000-7f30bbc8c000 ---p 00029000 00:21 4064                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_odepack.so
+7f30bbc8c000-7f30bbc8d000 rw-p 00028000 00:21 4064                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/integrate/_odepack.so
+7f30bbc8d000-7f30bbcce000 rw-p 00000000 00:00 0 
+7f30bbcce000-7f30bbcdf000 r-xp 00000000 00:21 4056                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ellip_harm_2.so
+7f30bbcdf000-7f30bbede000 ---p 00011000 00:21 4056                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ellip_harm_2.so
+7f30bbede000-7f30bbee0000 rw-p 00010000 00:21 4056                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ellip_harm_2.so
+7f30bbee0000-7f30bbf68000 r-xp 00000000 00:21 4049                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/cython_lapack.so
+7f30bbf68000-7f30bc167000 ---p 00088000 00:21 4049                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/cython_lapack.so
+7f30bc167000-7f30bc16e000 rw-p 00087000 00:21 4049                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/cython_lapack.so
+7f30bc16e000-7f30bc1a3000 r-xp 00000000 00:21 4048                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/cython_blas.so
+7f30bc1a3000-7f30bc3a3000 ---p 00035000 00:21 4048                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/cython_blas.so
+7f30bc3a3000-7f30bc3a7000 rw-p 00035000 00:21 4048                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/cython_blas.so
+7f30bc3a7000-7f30bc3a8000 rw-p 00000000 00:00 0 
+7f30bc3a8000-7f30bc3f1000 r-xp 00000000 00:21 4047                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_decomp_update.so
+7f30bc3f1000-7f30bc5f1000 ---p 00049000 00:21 4047                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_decomp_update.so
+7f30bc5f1000-7f30bc5fb000 rw-p 00049000 00:21 4047                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_decomp_update.so
+7f30bc5fb000-7f30bc63c000 rw-p 00000000 00:00 0 
+7f30bc63c000-7f30bc66c000 r-xp 00000000 00:21 4022                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_solve_toeplitz.so
+7f30bc66c000-7f30bc86b000 ---p 00030000 00:21 4022                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_solve_toeplitz.so
+7f30bc86b000-7f30bc870000 rw-p 0002f000 00:21 4022                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_solve_toeplitz.so
+7f30bc870000-7f30bc87e000 r-xp 00000000 00:21 4017                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_flinalg.so
+7f30bc87e000-7f30bca7e000 ---p 0000e000 00:21 4017                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_flinalg.so
+7f30bca7e000-7f30bca81000 rw-p 0000e000 00:21 4017                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_flinalg.so
+7f30bca81000-7f30bcb2e000 r-xp 00000000 00:21 4010                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_flapack.so
+7f30bcb2e000-7f30bcd2e000 ---p 000ad000 00:21 4010                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_flapack.so
+7f30bcd2e000-7f30bcd6a000 rw-p 000ad000 00:21 4010                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_flapack.so
+7f30bcd6a000-7f30bcdaa000 rw-p 00000000 00:00 0 
+7f30bcdaa000-7f30bcdf6000 r-xp 00000000 00:21 4007                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_fblas.so
+7f30bcdf6000-7f30bcff6000 ---p 0004c000 00:21 4007                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_fblas.so
+7f30bcff6000-7f30bd00f000 rw-p 0004c000 00:21 4007                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/linalg/_fblas.so
+7f30bd00f000-7f30bd010000 rw-p 00000000 00:00 0 
+7f30bd010000-7f30bd0dd000 r-xp 00000000 00:21 3995                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/specfun.so
+7f30bd0dd000-7f30bd2dc000 ---p 000cd000 00:21 3995                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/specfun.so
+7f30bd2dc000-7f30bd2e4000 rw-p 000cc000 00:21 3995                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/specfun.so
+7f30bd2e4000-7f30bd2ff000 r-xp 00000000 00:21 3992                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ufuncs_cxx.so
+7f30bd2ff000-7f30bd4fe000 ---p 0001b000 00:21 3992                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ufuncs_cxx.so
+7f30bd4fe000-7f30bd4ff000 rw-p 0001a000 00:21 3992                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ufuncs_cxx.so
+7f30bd4ff000-7f30bd500000 rw-p 00000000 00:00 0 
+7f30bd500000-7f30bd53d000 r-xp 00000000 00:21 3991                       /opt/conda/envs/python2/lib/libquadmath.so.0.0.0
+7f30bd53d000-7f30bd73d000 ---p 0003d000 00:21 3991                       /opt/conda/envs/python2/lib/libquadmath.so.0.0.0
+7f30bd73d000-7f30bd73e000 rw-p 0003d000 00:21 3991                       /opt/conda/envs/python2/lib/libquadmath.so.0.0.0
+7f30bd73e000-7f30bd73f000 rw-p 0003e000 00:21 3991                       /opt/conda/envs/python2/lib/libquadmath.so.0.0.0
+7f30bd73f000-7f30bd899000 r-xp 00000000 00:21 3989                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ufuncs.so
+7f30bd899000-7f30bda99000 ---p 0015a000 00:21 3989                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ufuncs.so
+7f30bda99000-7f30bdaaf000 rw-p 0015a000 00:21 3989                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/special/_ufuncs.so
+7f30bdaaf000-7f30bdaf6000 rw-p 00000000 00:00 0 
+7f30bdaf6000-7f30bdb07000 r-xp 00000000 00:21 3979                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/murmurhash.so
+7f30bdb07000-7f30bdd06000 ---p 00011000 00:21 3979                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/murmurhash.so
+7f30bdd06000-7f30bdd08000 rw-p 00010000 00:21 3979                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/utils/murmurhash.so
+7f30bdd08000-7f30bdd46000 r-xp 00000000 00:21 3970                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_reordering.so
+7f30bdd46000-7f30bdf46000 ---p 0003e000 00:21 3970                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_reordering.so
+7f30bdf46000-7f30bdf4b000 rw-p 0003e000 00:21 3970                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_reordering.so
+7f30bdf4b000-7f30bdf4c000 rw-p 00000000 00:00 0 
+7f30bdf4c000-7f30bdf72000 r-xp 00000000 00:21 3969                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_min_spanning_tree.so
+7f30bdf72000-7f30be172000 ---p 00026000 00:21 3969                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_min_spanning_tree.so
+7f30be172000-7f30be177000 rw-p 00026000 00:21 3969                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_min_spanning_tree.so
+7f30be177000-7f30be192000 r-xp 00000000 00:21 3968                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_traversal.so
+7f30be192000-7f30be392000 ---p 0001b000 00:21 3968                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_traversal.so
+7f30be392000-7f30be398000 rw-p 0001b000 00:21 3968                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_traversal.so
+7f30be398000-7f30be3b4000 r-xp 00000000 00:21 3967                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_tools.so
+7f30be3b4000-7f30be5b4000 ---p 0001c000 00:21 3967                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_tools.so
+7f30be5b4000-7f30be5b9000 rw-p 0001c000 00:21 3967                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_tools.so
+7f30be5b9000-7f30be5eb000 r-xp 00000000 00:21 3964                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_shortest_path.so
+7f30be5eb000-7f30be7eb000 ---p 00032000 00:21 3964                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_shortest_path.so
+7f30be7eb000-7f30be7f1000 rw-p 00032000 00:21 3964                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/csgraph/_shortest_path.so
+7f30be7f1000-7f30be7f2000 rw-p 00000000 00:00 0 
+7f30be7f2000-7f30be84a000 r-xp 00000000 00:21 3946                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/_csparsetools.so
+7f30be84a000-7f30bea49000 ---p 00058000 00:21 3946                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/_csparsetools.so
+7f30bea49000-7f30bea4f000 rw-p 00057000 00:21 3946                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/_csparsetools.so
+7f30bea4f000-7f30bea50000 rw-p 00000000 00:00 0 
+7f30bea50000-7f30bee1f000 r-xp 00000000 00:21 3935                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/_sparsetools.so
+7f30bee1f000-7f30bf01e000 ---p 003cf000 00:21 3935                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/_sparsetools.so
+7f30bf01e000-7f30bf024000 rw-p 003ce000 00:21 3935                       /opt/conda/envs/python2/lib/python2.7/site-packages/scipy/sparse/_sparsetools.so
+7f30bf024000-7f30bf2a4000 rw-p 00000000 00:00 0 
+7f30bf2e3000-7f30bf323000 rw-p 00000000 00:00 0 
+7f30bf323000-7f30bf325000 r-xp 00000000 00:21 3723                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/__check_build/_check_build.so
+7f30bf325000-7f30bf524000 ---p 00002000 00:21 3723                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/__check_build/_check_build.so
+7f30bf524000-7f30bf525000 rw-p 00001000 00:21 3723                       /opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/__check_build/_check_build.so
+7f30bf525000-7f30bf765000 rw-p 00000000 00:00 0 
+7f30bf765000-7f30bf776000 r-xp 00000000 00:21 5448                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_testing.so
+7f30bf776000-7f30bf976000 ---p 00011000 00:21 5448                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_testing.so
+7f30bf976000-7f30bf978000 rw-p 00011000 00:21 5448                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_testing.so
+7f30bf978000-7f30bf9b8000 rw-p 00000000 00:00 0 
+7f30bf9b8000-7f30bf9cb000 r-xp 00000000 00:21 5435                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/msgpack/_unpacker.so
+7f30bf9cb000-7f30bfbca000 ---p 00013000 00:21 5435                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/msgpack/_unpacker.so
+7f30bfbca000-7f30bfbcd000 rw-p 00012000 00:21 5435                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/msgpack/_unpacker.so
+7f30bfbcd000-7f30bfbde000 r-xp 00000000 00:21 5434                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/msgpack/_packer.so
+7f30bfbde000-7f30bfddd000 ---p 00011000 00:21 5434                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/msgpack/_packer.so
+7f30bfddd000-7f30bfddf000 rw-p 00010000 00:21 5434                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/msgpack/_packer.so
+7f30bfddf000-7f30bfe9f000 rw-p 00000000 00:00 0 
+7f30bfe9f000-7f30bfeb6000 r-xp 00000000 00:21 5402                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/json.so
+7f30bfeb6000-7f30c00b5000 ---p 00017000 00:21 5402                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/json.so
+7f30c00b5000-7f30c00b6000 rw-p 00016000 00:21 5402                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/json.so
+7f30c00b6000-7f30c00f6000 rw-p 00000000 00:00 0 
+7f30c00f6000-7f30c0160000 r-xp 00000000 00:21 5397                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/parser.so
+7f30c0160000-7f30c035f000 ---p 0006a000 00:21 5397                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/parser.so
+7f30c035f000-7f30c0365000 rw-p 00069000 00:21 5397                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/parser.so
+7f30c0365000-7f30c04e6000 rw-p 00000000 00:00 0 
+7f30c04e6000-7f30c0513000 r-xp 00000000 00:21 5327                       /opt/conda/envs/python2/lib/python2.7/site-packages/matplotlib/_path.so
+7f30c0513000-7f30c0713000 ---p 0002d000 00:21 5327                       /opt/conda/envs/python2/lib/python2.7/site-packages/matplotlib/_path.so
+7f30c0713000-7f30c0714000 rw-p 0002d000 00:21 5327                       /opt/conda/envs/python2/lib/python2.7/site-packages/matplotlib/_path.so
+7f30c0714000-7f30c08d5000 rw-p 00000000 00:00 0 
+7f30c08d5000-7f30c09e0000 r-xp 00000000 00:21 5261                       /opt/conda/envs/python2/lib/libiomp5.so
+7f30c09e0000-7f30c0bdf000 ---p 0010b000 00:21 5261                       /opt/conda/envs/python2/lib/libiomp5.so
+7f30c0bdf000-7f30c0bea000 rw-p 0010a000 00:21 5261                       /opt/conda/envs/python2/lib/libiomp5.so
+7f30c0bea000-7f30c0c19000 rw-p 00000000 00:00 0 
+7f30c0c19000-7f30c0c1f000 rw-p 00152000 00:21 5261                       /opt/conda/envs/python2/lib/libiomp5.so
+7f30c0c1f000-7f30c23b4000 r-xp 00000000 00:21 5260                       /opt/conda/envs/python2/lib/libmkl_core.so
+7f30c23b4000-7f30c25b4000 ---p 01795000 00:21 5260                       /opt/conda/envs/python2/lib/libmkl_core.so
+7f30c25b4000-7f30c25bc000 r--p 01795000 00:21 5260                       /opt/conda/envs/python2/lib/libmkl_core.so
+7f30c25bc000-7f30c25dd000 rw-p 0179d000 00:21 5260                       /opt/conda/envs/python2/lib/libmkl_core.so
+7f30c25dd000-7f30c2630000 rw-p 00000000 00:00 0 
+7f30c2630000-7f30c267f000 rw-p 019a9000 00:21 5260                       /opt/conda/envs/python2/lib/libmkl_core.so
+7f30c267f000-7f30c3be6000 r-xp 00000000 00:21 5259                       /opt/conda/envs/python2/lib/libmkl_intel_thread.so
+7f30c3be6000-7f30c3de6000 ---p 01567000 00:21 5259                       /opt/conda/envs/python2/lib/libmkl_intel_thread.so
+7f30c3de6000-7f30c3de9000 r--p 01567000 00:21 5259                       /opt/conda/envs/python2/lib/libmkl_intel_thread.so
+7f30c3de9000-7f30c3fa5000 rw-p 0156a000 00:21 5259                       /opt/conda/envs/python2/lib/libmkl_intel_thread.so
+7f30c3fa5000-7f30c3fab000 rw-p 00000000 00:00 0 
+7f30c3fab000-7f30c4000000 rw-p 01990000 00:21 5259                       /opt/conda/envs/python2/lib/libmkl_intel_thread.so
+7f30c4000000-7f30c5040000 rw-p 00000000 00:00 0 
+7f30c5040000-7f30c8000000 ---p 00000000 00:00 0 
+7f30c8006000-7f30c8206000 rw-p 00000000 00:00 0 
+7f30c8206000-7f30c8afd000 r-xp 00000000 00:21 5258                       /opt/conda/envs/python2/lib/libmkl_intel_lp64.so
+7f30c8afd000-7f30c8cfc000 ---p 008f7000 00:21 5258                       /opt/conda/envs/python2/lib/libmkl_intel_lp64.so
+7f30c8cfc000-7f30c8cfd000 r--p 008f6000 00:21 5258                       /opt/conda/envs/python2/lib/libmkl_intel_lp64.so
+7f30c8cfd000-7f30c8d11000 rw-p 008f7000 00:21 5258                       /opt/conda/envs/python2/lib/libmkl_intel_lp64.so
+7f30c8d11000-7f30c8d16000 rw-p 00000000 00:00 0 
+7f30c8d16000-7f30c8d55000 rw-p 00a54000 00:21 5258                       /opt/conda/envs/python2/lib/libmkl_intel_lp64.so
+7f30c8d55000-7f30c8d96000 r-xp 00000000 00:21 5257                       /opt/conda/envs/python2/lib/python2.7/site-packages/numexpr/interpreter.so
+7f30c8d96000-7f30c8f95000 ---p 00041000 00:21 5257                       /opt/conda/envs/python2/lib/python2.7/site-packages/numexpr/interpreter.so
+7f30c8f95000-7f30c8f97000 rw-p 00040000 00:21 5257                       /opt/conda/envs/python2/lib/python2.7/site-packages/numexpr/interpreter.so
+7f30c8f97000-7f30c8fbb000 rw-p 00000000 00:00 0 
+7f30c8fbb000-7f30c9002000 r-xp 00000000 00:21 5241                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_sparse.so
+7f30c9002000-7f30c9202000 ---p 00047000 00:21 5241                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_sparse.so
+7f30c9202000-7f30c9206000 rw-p 00047000 00:21 5241                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_sparse.so
+7f30c9206000-7f30c9268000 r-xp 00000000 00:21 5215                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_period.so
+7f30c9268000-7f30c9468000 ---p 00062000 00:21 5215                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_period.so
+7f30c9468000-7f30c9471000 rw-p 00062000 00:21 5215                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/_period.so
+7f30c9471000-7f30c9472000 rw-p 00000000 00:00 0 
+7f30c9472000-7f30c9477000 r-xp 00000000 00:21 5094                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_csv.so
+7f30c9477000-7f30c9676000 ---p 00005000 00:21 5094                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_csv.so
+7f30c9676000-7f30c9679000 rw-p 00004000 00:21 5094                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_csv.so
+7f30c9679000-7f30c96b7000 r-xp 00000000 00:21 5184                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/index.so
+7f30c96b7000-7f30c98b7000 ---p 0003e000 00:21 5184                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/index.so
+7f30c98b7000-7f30c98bb000 rw-p 0003e000 00:21 5184                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/index.so
+7f30c98bb000-7f30c9ae7000 r-xp 00000000 00:21 5168                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/algos.so
+7f30c9ae7000-7f30c9ce6000 ---p 0022c000 00:21 5168                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/algos.so
+7f30c9ce6000-7f30c9cf9000 rw-p 0022b000 00:21 5168                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/algos.so
+7f30c9cf9000-7f30c9cfc000 rw-p 00000000 00:00 0 
+7f30c9cfc000-7f30c9e0c000 r-xp 00000000 00:21 5156                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/lib.so
+7f30c9e0c000-7f30ca00c000 ---p 00110000 00:21 5156                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/lib.so
+7f30ca00c000-7f30ca01b000 rw-p 00110000 00:21 5156                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/lib.so
+7f30ca01b000-7f30ca01d000 rw-p 00000000 00:00 0 
+7f30ca01d000-7f30ca01f000 r-xp 00000000 00:21 5091                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_bisect.so
+7f30ca01f000-7f30ca21e000 ---p 00002000 00:21 5091                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_bisect.so
+7f30ca21e000-7f30ca21f000 rw-p 00001000 00:21 5091                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_bisect.so
+7f30ca21f000-7f30caba0000 rw-p 00000000 00:00 0 
+7f30caba0000-7f30cad2a000 r-xp 00000000 00:21 4534                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/tslib.so
+7f30cad2a000-7f30caf29000 ---p 0018a000 00:21 4534                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/tslib.so
+7f30caf29000-7f30caf40000 rw-p 00189000 00:21 4534                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/tslib.so
+7f30caf40000-7f30caf43000 rw-p 00000000 00:00 0 
+7f30caf43000-7f30cafae000 r-xp 00000000 00:21 3903                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/random/mtrand.so
+7f30cafae000-7f30cb1ae000 ---p 0006b000 00:21 3903                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/random/mtrand.so
+7f30cb1ae000-7f30cb1e7000 rw-p 0006b000 00:21 3903                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/random/mtrand.so
+7f30cb1e7000-7f30cb1e9000 rw-p 00000000 00:00 0 
+7f30cb1e9000-7f30cb1f2000 r-xp 00000000 00:21 3876                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/fft/fftpack_lite.so
+7f30cb1f2000-7f30cb3f1000 ---p 00009000 00:21 3876                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/fft/fftpack_lite.so
+7f30cb3f1000-7f30cb3f2000 rw-p 00008000 00:21 3876                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/fft/fftpack_lite.so
+7f30cb3f2000-7f30cb3f3000 r-xp 00000000 00:21 3860                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/future_builtins.so
+7f30cb3f3000-7f30cb5f3000 ---p 00001000 00:21 3860                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/future_builtins.so
+7f30cb5f3000-7f30cb5f4000 rw-p 00001000 00:21 3860                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/future_builtins.so
+7f30cb5f4000-7f30cb61c000 r-xp 00000000 00:21 3849                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/linalg/_umath_linalg.so
+7f30cb61c000-7f30cb81b000 ---p 00028000 00:21 3849                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/linalg/_umath_linalg.so
+7f30cb81b000-7f30cb81d000 rw-p 00027000 00:21 3849                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/linalg/_umath_linalg.so
+7f30cb81d000-7f30cb821000 r-xp 00000000 00:21 3848                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/linalg/lapack_lite.so
+7f30cb821000-7f30cba21000 ---p 00004000 00:21 3848                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/linalg/lapack_lite.so
+7f30cba21000-7f30cba22000 rw-p 00004000 00:21 3848                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/linalg/lapack_lite.so
+7f30cba22000-7f30cbaef000 r-xp 00000000 00:21 3752                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/core/umath.so
+7f30cbaef000-7f30cbcef000 ---p 000cd000 00:21 3752                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/core/umath.so
+7f30cbcef000-7f30cbcf5000 rw-p 000cd000 00:21 3752                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/core/umath.so
+7f30cbcf5000-7f30cbcf7000 rw-p 00000000 00:00 0 
+7f30cbcf7000-7f30cbdf6000 r-xp 00000000 00:21 3751                       /opt/conda/envs/python2/lib/libgfortran.so.3.0.0
+7f30cbdf6000-7f30cbff6000 ---p 000ff000 00:21 3751                       /opt/conda/envs/python2/lib/libgfortran.so.3.0.0
+7f30cbff6000-7f30cbff8000 rw-p 000ff000 00:21 3751                       /opt/conda/envs/python2/lib/libgfortran.so.3.0.0
+7f30cbff8000-7f30cc000000 rw-p 00102000 00:21 3751                       /opt/conda/envs/python2/lib/libgfortran.so.3.0.0
+7f30cc000000-7f30cc021000 rw-p 00000000 00:00 0 
+7f30cc021000-7f30d0000000 ---p 00000000 00:00 0 
+7f30d0000000-7f30d0021000 rw-p 00000000 00:00 0 
+7f30d0021000-7f30d4000000 ---p 00000000 00:00 0 
+7f30d4028000-7f30d4268000 rw-p 00000000 00:00 0 
+7f30d4268000-7f30d64a8000 r-xp 00000000 00:21 3749                       /opt/conda/envs/python2/lib/libopenblas-r0.2.18.so
+7f30d64a8000-7f30d66a8000 ---p 02240000 00:21 3749                       /opt/conda/envs/python2/lib/libopenblas-r0.2.18.so
+7f30d66a8000-7f30d66c4000 rw-p 02240000 00:21 3749                       /opt/conda/envs/python2/lib/libopenblas-r0.2.18.so
+7f30d66c4000-7f30d6715000 rw-p 00000000 00:00 0 
+7f30d6715000-7f30d68db000 r-xp 00000000 00:21 3747                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/core/multiarray.so
+7f30d68db000-7f30d6adb000 ---p 001c6000 00:21 3747                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/core/multiarray.so
+7f30d6adb000-7f30d6aea000 rw-p 001c6000 00:21 3747                       /opt/conda/envs/python2/lib/python2.7/site-packages/numpy/core/multiarray.so
+7f30d6aea000-7f30d6b3c000 rw-p 00000000 00:00 0 
+7f30d6b3c000-7f30d6ba1000 r-xp 00000000 00:21 4531                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/hashtable.so
+7f30d6ba1000-7f30d6da1000 ---p 00065000 00:21 4531                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/hashtable.so
+7f30d6da1000-7f30d6da8000 rw-p 00065000 00:21 4531                       /opt/conda/envs/python2/lib/python2.7/site-packages/pandas/hashtable.so
+7f30d6da8000-7f30d6e13000 rw-p 00000000 00:00 0 
+7f30d6e13000-7f30d6e14000 ---p 00000000 00:00 0 
+7f30d6e14000-7f30d7714000 rw-p 00000000 00:00 0                          [stack:755]
+7f30d7714000-7f30d7715000 ---p 00000000 00:00 0 
+7f30d7715000-7f30d8000000 rw-p 00000000 00:00 0                          [stack:754]
+7f30d8000000-7f30d80b3000 rw-p 00000000 00:00 0 
+7f30d80b3000-7f30dc000000 ---p 00000000 00:00 0 
+7f30dc000000-7f30dc021000 rw-p 00000000 00:00 0 
+7f30dc021000-7f30e0000000 ---p 00000000 00:00 0 
+7f30e0000000-7f30e0043000 rw-p 00000000 00:00 0 
+7f30e0043000-7f30e4000000 ---p 00000000 00:00 0 
+7f30e403e000-7f30e403f000 ---p 00000000 00:00 0 
+7f30e403f000-7f30e483f000 rw-p 00000000 00:00 0                          [stack:753]
+7f30e483f000-7f30e4840000 ---p 00000000 00:00 0 
+7f30e4840000-7f30e5040000 rw-p 00000000 00:00 0                          [stack:752]
+7f30e5040000-7f30e5041000 ---p 00000000 00:00 0 
+7f30e5041000-7f30e5841000 rw-p 00000000 00:00 0                          [stack:751]
+7f30e5841000-7f30e5842000 ---p 00000000 00:00 0 
+7f30e5842000-7f30e6042000 rw-p 00000000 00:00 0                          [stack:750]
+7f30e6042000-7f30e6043000 ---p 00000000 00:00 0 
+7f30e6043000-7f30e6843000 rw-p 00000000 00:00 0                          [stack:749]
+7f30e6843000-7f30e6844000 ---p 00000000 00:00 0 
+7f30e6844000-7f30e7144000 rw-p 00000000 00:00 0                          [stack:748]
+7f30e7144000-7f30e714a000 r-xp 00000000 00:21 3568                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_multiprocessing.so
+7f30e714a000-7f30e734a000 ---p 00006000 00:21 3568                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_multiprocessing.so
+7f30e734a000-7f30e734b000 rw-p 00006000 00:21 3568                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_multiprocessing.so
+7f30e734b000-7f30e738b000 rw-p 00000000 00:00 0 
+7f30e738b000-7f30e73b1000 r-xp 00000000 00:21 45                         /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f30e73b1000-7f30e75b0000 ---p 00026000 00:21 45                         /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f30e75b0000-7f30e75b4000 r--p 00025000 00:21 45                         /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f30e75b4000-7f30e75b5000 rw-p 00029000 00:21 45                         /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f30e75b5000-7f30e75ea000 r-xp 00000000 00:21 3545                       /lib/x86_64-linux-gnu/libncursesw.so.5.9
+7f30e75ea000-7f30e77e9000 ---p 00035000 00:21 3545                       /lib/x86_64-linux-gnu/libncursesw.so.5.9
+7f30e77e9000-7f30e77ea000 r--p 00034000 00:21 3545                       /lib/x86_64-linux-gnu/libncursesw.so.5.9
+7f30e77ea000-7f30e77eb000 rw-p 00035000 00:21 3545                       /lib/x86_64-linux-gnu/libncursesw.so.5.9
+7f30e77eb000-7f30e77fd000 r-xp 00000000 00:21 3543                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_curses.so
+7f30e77fd000-7f30e79fd000 ---p 00012000 00:21 3543                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_curses.so
+7f30e79fd000-7f30e79ff000 rw-p 00012000 00:21 3543                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_curses.so
+7f30e79ff000-7f30e7a00000 r-xp 00000000 00:21 3537                       /opt/conda/envs/python2/lib/python2.7/site-packages/tornado/speedups.so
+7f30e7a00000-7f30e7bff000 ---p 00001000 00:21 3537                       /opt/conda/envs/python2/lib/python2.7/site-packages/tornado/speedups.so
+7f30e7bff000-7f30e7c00000 rw-p 00000000 00:21 3537                       /opt/conda/envs/python2/lib/python2.7/site-packages/tornado/speedups.so
+7f30e7c00000-7f30e7c05000 r-xp 00000000 00:21 3536                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/zlib.so
+7f30e7c05000-7f30e7e04000 ---p 00005000 00:21 3536                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/zlib.so
+7f30e7e04000-7f30e7e06000 rw-p 00004000 00:21 3536                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/zlib.so
+7f30e7e06000-7f30e7e0e000 r-xp 00000000 00:21 3535                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/array.so
+7f30e7e0e000-7f30e800d000 ---p 00008000 00:21 3535                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/array.so
+7f30e800d000-7f30e8010000 rw-p 00007000 00:21 3535                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/array.so
+7f30e8010000-7f30e8090000 rw-p 00000000 00:00 0 
+7f30e8090000-7f30e8094000 r-xp 00000000 00:21 1749                       /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f30e8094000-7f30e8293000 ---p 00004000 00:21 1749                       /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f30e8293000-7f30e8294000 r--p 00003000 00:21 1749                       /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f30e8294000-7f30e8295000 rw-p 00004000 00:21 1749                       /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f30e8295000-7f30e82d5000 rw-p 00000000 00:00 0 
+7f30e82d5000-7f30e82dc000 r-xp 00000000 00:21 3454                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_device.so
+7f30e82dc000-7f30e84dc000 ---p 00007000 00:21 3454                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_device.so
+7f30e84dc000-7f30e84dd000 rw-p 00007000 00:21 3454                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_device.so
+7f30e84dd000-7f30e84df000 r-xp 00000000 00:21 3453                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_version.so
+7f30e84df000-7f30e86df000 ---p 00002000 00:21 3453                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_version.so
+7f30e86df000-7f30e86e0000 rw-p 00002000 00:21 3453                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_version.so
+7f30e86e0000-7f30e86ea000 r-xp 00000000 00:21 3452                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_poll.so
+7f30e86ea000-7f30e88e9000 ---p 0000a000 00:21 3452                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_poll.so
+7f30e88e9000-7f30e88eb000 rw-p 00009000 00:21 3452                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/_poll.so
+7f30e88eb000-7f30e88f1000 r-xp 00000000 00:21 3451                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/utils.so
+7f30e88f1000-7f30e8af0000 ---p 00006000 00:21 3451                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/utils.so
+7f30e8af0000-7f30e8af2000 rw-p 00005000 00:21 3451                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/utils.so
+7f30e8af2000-7f30e8b0a000 r-xp 00000000 00:21 3450                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/socket.so
+7f30e8b0a000-7f30e8d0a000 ---p 00018000 00:21 3450                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/socket.so
+7f30e8d0a000-7f30e8d0e000 rw-p 00018000 00:21 3450                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/socket.so
+7f30e8d0e000-7f30e8d18000 r-xp 00000000 00:21 3449                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/context.so
+7f30e8d18000-7f30e8f17000 ---p 0000a000 00:21 3449                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/context.so
+7f30e8f17000-7f30e8f19000 rw-p 00009000 00:21 3449                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/context.so
+7f30e8f19000-7f30e8f27000 r-xp 00000000 00:21 3448                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/message.so
+7f30e8f27000-7f30e9126000 ---p 0000e000 00:21 3448                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/message.so
+7f30e9126000-7f30e9129000 rw-p 0000d000 00:21 3448                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/message.so
+7f30e9129000-7f30e912d000 r-xp 00000000 00:21 3443                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/error.so
+7f30e912d000-7f30e932c000 ---p 00004000 00:21 3443                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/error.so
+7f30e932c000-7f30e932d000 rw-p 00003000 00:21 3443                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/error.so
+7f30e932d000-7f30e9343000 r-xp 00000000 00:21 3442                       /opt/conda/envs/python2/lib/libgcc_s.so.1
+7f30e9343000-7f30e9542000 ---p 00016000 00:21 3442                       /opt/conda/envs/python2/lib/libgcc_s.so.1
+7f30e9542000-7f30e9543000 rw-p 00015000 00:21 3442                       /opt/conda/envs/python2/lib/libgcc_s.so.1
+7f30e9543000-7f30e9544000 rw-p 00074000 00:21 3442                       /opt/conda/envs/python2/lib/libgcc_s.so.1
+7f30e9544000-7f30e96af000 r-xp 00000000 00:21 3441                       /opt/conda/envs/python2/lib/libstdc++.so.6.0.21
+7f30e96af000-7f30e98af000 ---p 0016b000 00:21 3441                       /opt/conda/envs/python2/lib/libstdc++.so.6.0.21
+7f30e98af000-7f30e98b9000 r--p 0016b000 00:21 3441                       /opt/conda/envs/python2/lib/libstdc++.so.6.0.21
+7f30e98b9000-7f30e98bb000 rw-p 00175000 00:21 3441                       /opt/conda/envs/python2/lib/libstdc++.so.6.0.21
+7f30e98bb000-7f30e98bf000 rw-p 00000000 00:00 0 
+7f30e98bf000-7f30e9900000 rw-p 00178000 00:21 3441                       /opt/conda/envs/python2/lib/libstdc++.so.6.0.21
+7f30e9900000-7f30e9966000 r-xp 00000000 00:21 3439                       /opt/conda/envs/python2/lib/libsodium.so.18.1.0
+7f30e9966000-7f30e9b65000 ---p 00066000 00:21 3439                       /opt/conda/envs/python2/lib/libsodium.so.18.1.0
+7f30e9b65000-7f30e9b66000 r--p 00065000 00:21 3439                       /opt/conda/envs/python2/lib/libsodium.so.18.1.0
+7f30e9b66000-7f30e9b67000 rw-p 00066000 00:21 3439                       /opt/conda/envs/python2/lib/libsodium.so.18.1.0
+7f30e9b67000-7f30e9b6e000 r-xp 00000000 00:21 119                        /lib/x86_64-linux-gnu/librt-2.19.so
+7f30e9b6e000-7f30e9d6d000 ---p 00007000 00:21 119                        /lib/x86_64-linux-gnu/librt-2.19.so
+7f30e9d6d000-7f30e9d6e000 r--p 00006000 00:21 119                        /lib/x86_64-linux-gnu/librt-2.19.so
+7f30e9d6e000-7f30e9d6f000 rw-p 00007000 00:21 119                        /lib/x86_64-linux-gnu/librt-2.19.so
+7f30e9d6f000-7f30e9dc8000 r-xp 00000000 00:21 3437                       /opt/conda/envs/python2/lib/libzmq.so.5.0.0
+7f30e9dc8000-7f30e9fc7000 ---p 00059000 00:21 3437                       /opt/conda/envs/python2/lib/libzmq.so.5.0.0
+7f30e9fc7000-7f30e9fcc000 rw-p 00058000 00:21 3437                       /opt/conda/envs/python2/lib/libzmq.so.5.0.0
+7f30e9fcc000-7f30e9fd7000 r-xp 00000000 00:21 3435                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/constants.so
+7f30e9fd7000-7f30ea1d7000 ---p 0000b000 00:21 3435                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/constants.so
+7f30ea1d7000-7f30ea1da000 rw-p 0000b000 00:21 3435                       /opt/conda/envs/python2/lib/python2.7/site-packages/zmq/backend/cython/constants.so
+7f30ea1da000-7f30ea29a000 rw-p 00000000 00:00 0 
+7f30ea29a000-7f30ea29e000 r-xp 00000000 00:21 3368                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_lsprof.so
+7f30ea29e000-7f30ea49d000 ---p 00004000 00:21 3368                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_lsprof.so
+7f30ea49d000-7f30ea49e000 rw-p 00003000 00:21 3368                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_lsprof.so
+7f30ea49e000-7f30ea51f000 rw-p 00000000 00:00 0 
+7f30ea51f000-7f30ea5b5000 r-xp 00000000 00:21 3338                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/unicodedata.so
+7f30ea5b5000-7f30ea7b4000 ---p 00096000 00:21 3338                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/unicodedata.so
+7f30ea7b4000-7f30ea7c8000 rw-p 00095000 00:21 3338                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/unicodedata.so
+7f30ea7c8000-7f30ea808000 rw-p 00000000 00:00 0 
+7f30ea808000-7f30ea8cd000 r-xp 00000000 00:21 3313                       /opt/conda/envs/python2/lib/libsqlite3.so.0.8.6
+7f30ea8cd000-7f30eaacd000 ---p 000c5000 00:21 3313                       /opt/conda/envs/python2/lib/libsqlite3.so.0.8.6
+7f30eaacd000-7f30eaad1000 rw-p 000c5000 00:21 3313                       /opt/conda/envs/python2/lib/libsqlite3.so.0.8.6
+7f30eaad1000-7f30eaad2000 rw-p 00000000 00:00 0 
+7f30eaad2000-7f30eaae3000 r-xp 00000000 00:21 3311                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_sqlite3.so
+7f30eaae3000-7f30eace3000 ---p 00011000 00:21 3311                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_sqlite3.so
+7f30eace3000-7f30eace6000 rw-p 00011000 00:21 3311                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_sqlite3.so
+7f30eace6000-7f30ead26000 rw-p 00000000 00:00 0 
+7f30ead26000-7f30ead39000 r-xp 00000000 00:21 3279                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/cPickle.so
+7f30ead39000-7f30eaf38000 ---p 00013000 00:21 3279                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/cPickle.so
+7f30eaf38000-7f30eaf3a000 rw-p 00012000 00:21 3279                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/cPickle.so
+7f30eaf3a000-7f30eb03a000 rw-p 00000000 00:00 0 
+7f30eb03a000-7f30eb04c000 r-xp 00000000 00:21 3254                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/datetime.so
+7f30eb04c000-7f30eb24b000 ---p 00012000 00:21 3254                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/datetime.so
+7f30eb24b000-7f30eb24f000 rw-p 00011000 00:21 3254                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/datetime.so
+7f30eb24f000-7f30eb28f000 rw-p 00000000 00:00 0 
+7f30eb28f000-7f30eb2a3000 r-xp 00000000 00:21 3236                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_ssl.so
+7f30eb2a3000-7f30eb4a2000 ---p 00014000 00:21 3236                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_ssl.so
+7f30eb4a2000-7f30eb4a6000 rw-p 00013000 00:21 3236                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_ssl.so
+7f30eb4a6000-7f30eb4b4000 r-xp 00000000 00:21 3235                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_socket.so
+7f30eb4b4000-7f30eb6b4000 ---p 0000e000 00:21 3235                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_socket.so
+7f30eb6b4000-7f30eb6b9000 rw-p 0000e000 00:21 3235                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_socket.so
+7f30eb6b9000-7f30eb739000 rw-p 00000000 00:00 0 
+7f30eb739000-7f30eb75a000 r-xp 00000000 00:21 3193                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_ctypes.so
+7f30eb75a000-7f30eb959000 ---p 00021000 00:21 3193                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_ctypes.so
+7f30eb959000-7f30eb95e000 rw-p 00020000 00:21 3193                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_ctypes.so
+7f30eb95e000-7f30eb99e000 rw-p 00000000 00:00 0 
+7f30eb99e000-7f30eb9a0000 r-xp 00000000 00:21 3166                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/resource.so
+7f30eb9a0000-7f30ebba0000 ---p 00002000 00:21 3166                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/resource.so
+7f30ebba0000-7f30ebba1000 rw-p 00002000 00:21 3166                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/resource.so
+7f30ebba1000-7f30ebba5000 r-xp 00000000 00:21 3161                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/termios.so
+7f30ebba5000-7f30ebda5000 ---p 00004000 00:21 3161                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/termios.so
+7f30ebda5000-7f30ebda7000 rw-p 00004000 00:21 3161                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/termios.so
+7f30ebda7000-7f30ebe27000 rw-p 00000000 00:00 0 
+7f30ebe27000-7f30ebe45000 r-xp 00000000 00:21 3118                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_io.so
+7f30ebe45000-7f30ec044000 ---p 0001e000 00:21 3118                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_io.so
+7f30ec044000-7f30ec04e000 rw-p 0001d000 00:21 3118                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_io.so
+7f30ec04e000-7f30ec0ce000 rw-p 00000000 00:00 0 
+7f30ec0ce000-7f30ec0d1000 r-xp 00000000 00:21 3078                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_random.so
+7f30ec0d1000-7f30ec2d0000 ---p 00003000 00:21 3078                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_random.so
+7f30ec2d0000-7f30ec2d1000 rw-p 00002000 00:21 3078                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_random.so
+7f30ec2d1000-7f30ec4dd000 r-xp 00000000 00:21 3077                       /opt/conda/envs/python2/lib/libcrypto.so.1.0.0
+7f30ec4dd000-7f30ec6dc000 ---p 0020c000 00:21 3077                       /opt/conda/envs/python2/lib/libcrypto.so.1.0.0
+7f30ec6dc000-7f30ec704000 rw-p 0020b000 00:21 3077                       /opt/conda/envs/python2/lib/libcrypto.so.1.0.0
+7f30ec704000-7f30ec707000 rw-p 00000000 00:00 0 
+7f30ec707000-7f30ec773000 r-xp 00000000 00:21 1044                       /opt/conda/envs/python2/lib/libssl.so.1.0.0
+7f30ec773000-7f30ec972000 ---p 0006c000 00:21 1044                       /opt/conda/envs/python2/lib/libssl.so.1.0.0
+7f30ec972000-7f30ec97d000 rw-p 0006b000 00:21 1044                       /opt/conda/envs/python2/lib/libssl.so.1.0.0
+7f30ec97d000-7f30ec981000 r-xp 00000000 00:21 3076                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_hashlib.so
+7f30ec981000-7f30ecb81000 ---p 00004000 00:21 3076                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_hashlib.so
+7f30ecb81000-7f30ecb82000 rw-p 00004000 00:21 3076                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_hashlib.so
+7f30ecb82000-7f30ecb8a000 r-xp 00000000 00:21 3073                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/math.so
+7f30ecb8a000-7f30ecd89000 ---p 00008000 00:21 3073                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/math.so
+7f30ecd89000-7f30ecd8b000 rw-p 00007000 00:21 3073                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/math.so
+7f30ecd8b000-7f30ece8b000 rw-p 00000000 00:00 0 
+7f30ece8b000-7f30ece90000 r-xp 00000000 00:21 3019                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/strop.so
+7f30ece90000-7f30ed08f000 ---p 00005000 00:21 3019                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/strop.so
+7f30ed08f000-7f30ed091000 rw-p 00004000 00:21 3019                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/strop.so
+7f30ed092000-7f30ed152000 rw-p 00000000 00:00 0 
+7f30ed152000-7f30ed154000 r-xp 00000000 00:21 3014                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_functools.so
+7f30ed154000-7f30ed354000 ---p 00002000 00:21 3014                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_functools.so
+7f30ed354000-7f30ed355000 rw-p 00002000 00:21 3014                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_functools.so
+7f30ed355000-7f30ed395000 rw-p 00000000 00:00 0 
+7f30ed395000-7f30ed397000 r-xp 00000000 00:21 3005                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/grp.so
+7f30ed397000-7f30ed596000 ---p 00002000 00:21 3005                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/grp.so
+7f30ed596000-7f30ed597000 rw-p 00001000 00:21 3005                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/grp.so
+7f30ed597000-7f30ed5d7000 rw-p 00000000 00:00 0 
+7f30ed5d7000-7f30ed5da000 r-xp 00000000 00:21 3000                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_heapq.so
+7f30ed5da000-7f30ed7da000 ---p 00003000 00:21 3000                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_heapq.so
+7f30ed7da000-7f30ed7dc000 rw-p 00003000 00:21 3000                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_heapq.so
+7f30ed7dc000-7f30ed7e6000 r-xp 00000000 00:21 2999                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/itertools.so
+7f30ed7e6000-7f30ed9e6000 ---p 0000a000 00:21 2999                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/itertools.so
+7f30ed9e6000-7f30ed9eb000 rw-p 0000a000 00:21 2999                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/itertools.so
+7f30ed9eb000-7f30ed9f3000 r-xp 00000000 00:21 2994                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/operator.so
+7f30ed9f3000-7f30edbf3000 ---p 00008000 00:21 2994                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/operator.so
+7f30edbf3000-7f30edbf5000 rw-p 00008000 00:21 2994                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/operator.so
+7f30edbf5000-7f30edbfc000 r-xp 00000000 00:21 2993                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_collections.so
+7f30edbfc000-7f30eddfb000 ---p 00007000 00:21 2993                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_collections.so
+7f30eddfb000-7f30eddfd000 rw-p 00006000 00:21 2993                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_collections.so
+7f30eddfd000-7f30ede3d000 rw-p 00000000 00:00 0 
+7f30ede3d000-7f30ede41000 r-xp 00000000 00:21 2968                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/cStringIO.so
+7f30ede41000-7f30ee040000 ---p 00004000 00:21 2968                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/cStringIO.so
+7f30ee040000-7f30ee042000 rw-p 00003000 00:21 2968                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/cStringIO.so
+7f30ee042000-7f30ee058000 r-xp 00000000 00:21 1027                       /opt/conda/envs/python2/lib/libz.so.1.2.8
+7f30ee058000-7f30ee257000 ---p 00016000 00:21 1027                       /opt/conda/envs/python2/lib/libz.so.1.2.8
+7f30ee257000-7f30ee258000 rw-p 00015000 00:21 1027                       /opt/conda/envs/python2/lib/libz.so.1.2.8
+7f30ee258000-7f30ee25c000 r-xp 00000000 00:21 2966                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/binascii.so
+7f30ee25c000-7f30ee45c000 ---p 00004000 00:21 2966                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/binascii.so
+7f30ee45c000-7f30ee45d000 rw-p 00004000 00:21 2966                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/binascii.so
+7f30ee45d000-7f30ee460000 r-xp 00000000 00:21 2963                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/fcntl.so
+7f30ee460000-7f30ee65f000 ---p 00003000 00:21 2963                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/fcntl.so
+7f30ee65f000-7f30ee661000 rw-p 00002000 00:21 2963                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/fcntl.so
+7f30ee661000-7f30ee665000 r-xp 00000000 00:21 2962                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/select.so
+7f30ee665000-7f30ee865000 ---p 00004000 00:21 2962                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/select.so
+7f30ee865000-7f30ee867000 rw-p 00004000 00:21 2962                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/select.so
+7f30ee867000-7f30ee86b000 r-xp 00000000 00:21 2961                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/time.so
+7f30ee86b000-7f30eea6a000 ---p 00004000 00:21 2961                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/time.so
+7f30eea6a000-7f30eea6c000 rw-p 00003000 00:21 2961                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/time.so
+7f30eea6c000-7f30eea74000 r-xp 00000000 00:21 2956                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_json.so
+7f30eea74000-7f30eec74000 ---p 00008000 00:21 2956                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_json.so
+7f30eec74000-7f30eec75000 rw-p 00008000 00:21 2956                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_json.so
+7f30eec75000-7f30eec7c000 r-xp 00000000 00:21 2953                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_struct.so
+7f30eec7c000-7f30eee7c000 ---p 00007000 00:21 2953                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_struct.so
+7f30eee7c000-7f30eee7e000 rw-p 00007000 00:21 2953                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_struct.so
+7f30eee7e000-7f30ef007000 r--p 00000000 00:21 50                         /usr/lib/locale/locale-archive
+7f30ef007000-7f30ef00b000 r-xp 00000000 00:21 2749                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_locale.so
+7f30ef00b000-7f30ef20b000 ---p 00004000 00:21 2749                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_locale.so
+7f30ef20b000-7f30ef20c000 rw-p 00004000 00:21 2749                       /opt/conda/envs/python2/lib/python2.7/lib-dynload/_locale.so
+7f30ef20c000-7f30ef3ae000 r-xp 00000000 00:21 38                         /lib/x86_64-linux-gnu/libc-2.19.so
+7f30ef3ae000-7f30ef5ad000 ---p 001a2000 00:21 38                         /lib/x86_64-linux-gnu/libc-2.19.so
+7f30ef5ad000-7f30ef5b1000 r--p 001a1000 00:21 38                         /lib/x86_64-linux-gnu/libc-2.19.so
+7f30ef5b1000-7f30ef5b3000 rw-p 001a5000 00:21 38                         /lib/x86_64-linux-gnu/libc-2.19.so
+7f30ef5b3000-7f30ef5b7000 rw-p 00000000 00:00 0 
+7f30ef5b7000-7f30ef6b7000 r-xp 00000000 00:21 121                        /lib/x86_64-linux-gnu/libm-2.19.so
+7f30ef6b7000-7f30ef8b6000 ---p 00100000 00:21 121                        /lib/x86_64-linux-gnu/libm-2.19.so
+7f30ef8b6000-7f30ef8b7000 r--p 000ff000 00:21 121                        /lib/x86_64-linux-gnu/libm-2.19.so
+7f30ef8b7000-7f30ef8b8000 rw-p 00100000 00:21 121                        /lib/x86_64-linux-gnu/libm-2.19.so
+7f30ef8b8000-7f30ef8ba000 r-xp 00000000 00:21 117                        /lib/x86_64-linux-gnu/libutil-2.19.so
+7f30ef8ba000-7f30efab9000 ---p 00002000 00:21 117                        /lib/x86_64-linux-gnu/libutil-2.19.so
+7f30efab9000-7f30efaba000 r--p 00001000 00:21 117                        /lib/x86_64-linux-gnu/libutil-2.19.so
+7f30efaba000-7f30efabb000 rw-p 00002000 00:21 117                        /lib/x86_64-linux-gnu/libutil-2.19.so
+7f30efabb000-7f30efabe000 r-xp 00000000 00:21 47                         /lib/x86_64-linux-gnu/libdl-2.19.so
+7f30efabe000-7f30efcbd000 ---p 00003000 00:21 47                         /lib/x86_64-linux-gnu/libdl-2.19.so
+7f30efcbd000-7f30efcbe000 r--p 00002000 00:21 47                         /lib/x86_64-linux-gnu/libdl-2.19.so
+7f30efcbe000-7f30efcbf000 rw-p 00003000 00:21 47                         /lib/x86_64-linux-gnu/libdl-2.19.so
+7f30efcbf000-7f30efcd7000 r-xp 00000000 00:21 61                         /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f30efcd7000-7f30efed6000 ---p 00018000 00:21 61                         /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f30efed6000-7f30efed7000 r--p 00017000 00:21 61                         /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f30efed7000-7f30efed8000 rw-p 00018000 00:21 61                         /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f30efed8000-7f30efedc000 rw-p 00000000 00:00 0 
+7f30efedc000-7f30f0075000 r-xp 00000000 00:21 2705                       /opt/conda/envs/python2/lib/libpython2.7.so.1.0
+7f30f0075000-7f30f0274000 ---p 00199000 00:21 2705                       /opt/conda/envs/python2/lib/libpython2.7.so.1.0
+7f30f0274000-7f30f02b4000 rw-p 00198000 00:21 2705                       /opt/conda/envs/python2/lib/libpython2.7.so.1.0
+7f30f02b4000-7f30f02c3000 rw-p 00000000 00:00 0 
+7f30f02c3000-7f30f02e3000 r-xp 00000000 00:21 35                         /lib/x86_64-linux-gnu/ld-2.19.so
+7f30f0322000-7f30f03e2000 rw-p 00000000 00:00 0 
+7f30f03f2000-7f30f03f3000 rw-p 00000000 00:00 0 
+7f30f03f3000-7f30f03f6000 r--s 0075b000 00:21 5690                       /opt/conda/envs/python2/lib/python2.7/site-packages/konlpy/java/kkma-2.0.jar
+7f30f03f6000-7f30f03fa000 r--s 00025000 00:21 5689                       /opt/conda/envs/python2/lib/python2.7/site-packages/konlpy/java/jhannanum-0.8.4.jar
+7f30f03fa000-7f30f03fc000 r--s 00012000 00:21 5609                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/zipfs.jar
+7f30f03fc000-7f30f03fd000 r--s 00002000 00:21 5608                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/dnsns.jar
+7f30f03fd000-7f30f0401000 r--s 00034000 00:21 5607                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7f30f0401000-7f30f0405000 r--s 00085000 00:21 5606                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/localedata.jar
+7f30f0405000-7f30f0408000 r--s 0003d000 00:21 5605                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7f30f0408000-7f30f040b000 r--s 0000f000 00:21 5603                       /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7f30f040b000-7f30f0413000 rw-s 00000000 00:21 5807                       /tmp/hsperfdata_jovyan/744
+7f30f0413000-7f30f04d8000 rw-p 00000000 00:00 0 
+7f30f04d8000-7f30f04da000 r--s 00006000 00:21 5611                       /usr/share/java/java-atk-wrapper.jar
+7f30f04da000-7f30f04db000 rw-p 00000000 00:00 0 
+7f30f04db000-7f30f04dc000 ---p 00000000 00:00 0 
+7f30f04dc000-7f30f04dd000 rw-s 00000000 00:22 31539                      /dev/shm/sem.cPxHXT (deleted)
+7f30f04dd000-7f30f04de000 rw-s 00000000 00:22 31538                      /dev/shm/sem.7xEJnV (deleted)
+7f30f04de000-7f30f04df000 rw-s 00000000 00:22 31536                      /dev/shm/sem.UA3LNW (deleted)
+7f30f04df000-7f30f04e0000 rw-s 00000000 00:22 31535                      /dev/shm/sem.dlYOdY (deleted)
+7f30f04e0000-7f30f04e1000 rwxp 00000000 00:00 0 
+7f30f04e1000-7f30f04e3000 rw-p 00000000 00:00 0 
+7f30f04e3000-7f30f04e4000 r--p 00020000 00:21 35                         /lib/x86_64-linux-gnu/ld-2.19.so
+7f30f04e4000-7f30f04e5000 rw-p 00021000 00:21 35                         /lib/x86_64-linux-gnu/ld-2.19.so
+7f30f04e5000-7f30f04e6000 rw-p 00000000 00:00 0 
+7ffce7840000-7ffce7843000 ---p 00000000 00:00 0 
+7ffce7844000-7ffce7940000 rw-p 00000000 00:00 0                          [stack]
+7ffce794d000-7ffce794f000 r--p 00000000 00:00 0                          [vvar]
+7ffce794f000-7ffce7951000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx768m 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x98ed60], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x98ed60], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x7fa580], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x7fa580], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x7fa580], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x7fa580], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x7fa6b0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x7fa600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x7fa600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x7fa600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x7fa600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTRAP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:8.5
+
+uname:Linux 4.4.16-boot2docker #1 SMP Fri Jul 29 00:13:24 UTC 2016 x86_64
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 1048576, NOFILE 1048576, AS infinity
+load average:0.30 0.68 0.62
+
+/proc/meminfo:
+MemTotal:        2050404 kB
+MemFree:           95384 kB
+MemAvailable:      59620 kB
+Buffers:            1112 kB
+Cached:           118376 kB
+SwapCached:        11416 kB
+Active:          1258376 kB
+Inactive:         471004 kB
+Active(anon):    1245640 kB
+Inactive(anon):   460016 kB
+Active(file):      12736 kB
+Inactive(file):    10988 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       1419212 kB
+SwapFree:          59908 kB
+Dirty:               196 kB
+Writeback:          8128 kB
+AnonPages:       1601100 kB
+Mapped:            63992 kB
+Shmem:             95740 kB
+Slab:              36420 kB
+SReclaimable:      17364 kB
+SUnreclaim:        19056 kB
+KernelStack:        3344 kB
+PageTables:        10428 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2444412 kB
+Committed_AS:    3485524 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+AnonHugePages:   1226752 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       47040 kB
+DirectMap2M:     2050048 kB
+
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
+stepping	: 3
+cpu MHz		: 3407.998
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc pni pclmulqdq monitor ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch rdseed clflushopt
+bugs		:
+bogomips	: 6815.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2050404k(95384k free), swap 1419212k(59908k free)
+
+vm_info: OpenJDK 64-Bit Server VM (24.111-b01) for linux-amd64 JRE (1.7.0_111-b01), built on Jul 31 2016 18:05:06 by "jmm" with gcc 4.9.2
+
+time: Thu Aug 18 12:53:04 2016
+elapsed time: 8 seconds
+
